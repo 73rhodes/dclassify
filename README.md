@@ -53,3 +53,53 @@ Document instances with names and tokens, using whatever kind of tokenization yo
     var testDoc = new Document('testDoc', ['b','d', 'e']);    
     var result1 = classifier.classify(testDoc);
     console.log(result1);
+    
+Output
+------
+
+With the test above, here are the probabilities that get calculated:
+    {
+        "bad": {
+            "a": 1,
+            "b": 0.6666666666666666,
+            "c": 0.6666666666666666,
+            "d": 0.3333333333333333,
+            "e": 0.3333333333333333
+        },
+        "good": {
+            "a": 0,
+            "b": 0.3333333333333333,
+            "c": 0.3333333333333333,
+            "d": 0.6666666666666666,
+            "e": 0.6666666666666666
+        }
+    }
+
+
+Without the 'applyInverse' option, this is what you get:
+
+    {
+        category: 'good',
+        probability: 0.6666666666666666,
+        timesMoreLikely: 2,
+        secondCategory: 'bad',
+        probabilities: [
+            { category: 'good', probability: 0.14814814814814814},
+            { category: 'bad', probability: 0.07407407407407407}
+        ]
+    }
+
+With the 'applyInverse' option, you get this:
+
+    {
+        category: 'good',
+        probability: 1,
+        timesMoreLikely: Infinity,
+        secondCategory: 'bad',
+        probabilities: [
+            { category: 'good', probability: 0.09876543209876543 },
+            { category: 'bad', probability: 0 }
+        ]
+    }
+
+It's a lot more emphatic, because training indicates bad items never lack the "a" token.
