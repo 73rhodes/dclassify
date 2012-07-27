@@ -58,6 +58,7 @@ Output
 ------
 
 With the test above, here are the probabilities that get calculated:
+
     {
         "bad": {
             "a": 1,
