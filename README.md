@@ -20,11 +20,11 @@ Usage
 This doesn't make any assumptions about the data you want to classify, so first you have to create your own 
 Document instances with names and tokens, using whatever kind of tokenization you require, 
 
-    var mod = require('lib/classifier');
+    var dclassify = require('lib/classifier');
     
-    var Classifier = mod.Classifier;
-    var DataSet    = mod.DataSet;
-    var Document   = mod.Document;
+    var Classifier = dclassify.Classifier;
+    var DataSet    = dclassify.DataSet;
+    var Document   = dclassify.Document;
     
     // 'bad' items
     var item1 = new Document('item1', ['a','b','c']);
