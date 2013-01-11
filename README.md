@@ -18,6 +18,7 @@ Usage
 
 This doesn't make any assumptions about the data you want to classify, so first you have to create your own 
 Document instances with names and tokens, using whatever kind of tokenization you require, 
+``` javascript
 
     // module dependencies
     var dclassify = require('lib/classifier');
@@ -60,12 +61,14 @@ Document instances with names and tokens, using whatever kind of tokenization yo
     var testDoc = new Document('testDoc', ['b','d', 'e']);    
     var result1 = classifier.classify(testDoc);
     console.log(result1);
-    
+```
+
 Output
 ------
 
 With the test above, here are the probabilities that get calculated:
 
+``` json
     {
         "bad": {
             "a": 1,
@@ -82,32 +85,36 @@ With the test above, here are the probabilities that get calculated:
             "e": 0.6666666666666666
         }
     }
-
+```
 
 Without the 'applyInverse' option, this is what you get:
 
+``` json
     {
-        category: 'good',
-        probability: 0.6666666666666666,
-        timesMoreLikely: 2,
-        secondCategory: 'bad',
-        probabilities: [
-            { category: 'good', probability: 0.14814814814814814},
-            { category: 'bad', probability: 0.07407407407407407}
+        "category": "good",
+        "probability": 0.6666666666666666,
+        "timesMoreLikely": 2,
+        "secondCategory": "bad",
+        "probabilities": [
+            { "category": "good", "probability": 0.14814814814814814},
+            { "category": "bad", "probability": 0.07407407407407407}
         ]
     }
+```
 
 With the 'applyInverse' option, you get this:
 
+``` json
     {
-        category: 'good',
-        probability: 1,
-        timesMoreLikely: Infinity,
-        secondCategory: 'bad',
-        probabilities: [
-            { category: 'good', probability: 0.09876543209876543 },
-            { category: 'bad', probability: 0 }
+        "category": "good",
+        "probability": 1,
+        "timesMoreLikely": "Infinity",
+        "secondCategory": "bad",
+        "probabilities": [
+            { "category": "good", "probability": 0.09876543209876543 },
+            { "category": "bad", "probability": 0 }
         ]
     }
+```
 
 It's a lot more emphatic, because training indicates bad items never lack the "a" token.
