@@ -1,23 +1,24 @@
 dclassify
 =========
 
-Yet another naive bayesian classifier for nodejs. Intended for classifying items based on a limited set of 
+An optimized Naive Bayesian classifier for NodeJS, intended for classifying items based on a limited set of 
 characteristics, rather than for language processing tasks.
 
-General-purpose 'Document' and 'DataSet' classes to create arbitrary training and validation data sets.
+It provides general-purpose Document and DataSet classes to create arbitrary training and test data sets.
 
-Training, validation and classify methods.
-
-If the applyInverse option is used, it will calculate probabilities based on the present tokens (as usual),
-and also calculate a probability-of-absence for the missing tokens. This is unconventional, but it
-produces better results in testing. It works better for classifying ojects based on a rather small set of 
-characteristics rather than for, say, the whole English vocabulary.
+If the applyInverse optimization is used, it will calculate probabilities based on the present tokens (as usual),
+and also calculate a probability-of-absence for missing tokens. This is unconventional, but produces better results
+in testing. It works best for classifying ojects based on a rather small set of characteristics rather than for,
+say, the whole English vocabulary.
 
 Usage
 -----
+1. Require the classifier and reference its utilities.
+1. Create Document instances with names and an array of tokens representing the document's characteristics.
+1. Add document instances to a DataSet using appropriate categories.
+1. Create and train a classifier using the DataSet.
+1. Test the classifier using a test Document.
 
-This doesn't make any assumptions about the data you want to classify, so first you have to create your own 
-Document instances with names and tokens, using whatever kind of tokenization you require, 
 ``` javascript
 
     // module dependencies
