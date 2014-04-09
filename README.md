@@ -1,15 +1,19 @@
 dclassify
 =========
 
-An optimized Naive Bayesian classifier for NodeJS, intended for classifying items based on a limited set of 
-characteristics, rather than for language processing tasks.
+dclassify is a Naive Bayesian classifier for NodeJS that goes one step further than your
+usual binary classifier by introducing a unique probablility-of-absence optimisation. In
+testing, this optimisation has led to a ~10% improvement in correctness. It is intended
+for classifying items based on a finite set of characteristics, rather than for language
+processing.
 
-It provides general-purpose Document and DataSet classes to create arbitrary training and test data sets.
+General-purpose Document and DataSet classes are provided for training and test data sets.
 
-If the applyInverse optimization is used, it will calculate probabilities based on the present tokens (as usual),
-and also calculate a probability-of-absence for missing tokens. This is unconventional, but produces better results
-in testing. It works best for classifying ojects based on a rather small set of characteristics rather than for,
-say, the whole English vocabulary.
+If the applyInverse optimization is used, dclassify will calculate probabilities based on
+the present tokens as usual, but will also calculate a probability-of-absence for missing
+tokens. This is unconventional, but produces better results in testing. It works best for
+classifying ojects based on a limited set of characteristics, rather than for example the
+whole English vocabulary.
 
 Usage
 -----
