@@ -1,7 +1,7 @@
-var mod = require(__dirname + '/../lib/classifier');
-var Classifier = mod.Classifier;
-var DataSet    = mod.DataSet;
-var Document   = mod.Document;
+var classifier = require('..');
+var Classifier = classifier.Classifier;
+var DataSet    = classifier.DataSet;
+var Document   = classifier.Document;
 
 var data = new DataSet();
 
@@ -39,3 +39,4 @@ console.log(JSON.stringify(classifier2.probabilities, null, 4));
 
 var result2 = classifier2.classify(testDoc);
 console.log(result2);
+

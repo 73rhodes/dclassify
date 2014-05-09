@@ -1,0 +1,22 @@
+{
+  "name": "dclassify",
+  "version": "1.0.0",
+  "description": "Optimized Naive Bayesian classifier for NodeJS",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node ./test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/PolicyMic/dclassify.git"
+  },
+  "author": "Darren DeRidder",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PolicyMic/dclassify/issues"
+  },
+  "homepage": "https://github.com/PolicyMic/dclassify"
+}

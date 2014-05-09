@@ -26,7 +26,7 @@ Usage
 ``` javascript
 
     // module dependencies
-    var dclassify = require('lib/classifier');
+    var dclassify = require('dclassify');
 
     // Utilities provided by dclassify
     var Classifier = dclassify.Classifier;
