@@ -4,12 +4,12 @@ dclassify
 dclassify is a Naive Bayesian classifier for NodeJS that goes one step further than your
 usual binary classifier by introducing a unique probablility-of-absence optimisation. In
 testing this optimisation has led to a ~10% improvement in correctness over conventional
-binary classifier. It is mainly intended for classifying items based on a finite set of
+binary classifiers. It is mainly intended for classifying items based on a finite set of
 characteristics, rather than for language processing.
 
 General-purpose Document and DataSet classes are provided for training and test data sets.
 
-If the applyInverse optimization is used, dclassify will calculate probabilities based on
+If the applyInverse optimisation is used, dclassify will calculate probabilities based on
 the present tokens as usual, but will also calculate a probability-of-absence for missing
 tokens. This is unconventional but produces better results particularly when working with
 smaller vocabularies. Its especially well-suited for classifying items based on a limited
@@ -49,7 +49,7 @@ Usage
     data.add('bad',  [item1, item2, item3]);    
     data.add('good', [itemA, itemB, itemC]);
     
-    // an optimization for working with small vocabularies
+    // an optimisation for working with small vocabularies
     var options = {
         applyInverse: true
     };
@@ -68,10 +68,10 @@ Usage
     console.log(result1);
 ```
 
-Output
-------
+Probabilities
+-------------
 
-With the test above, here are the probabilities that get calculated:
+The probabilities get calculated like this.
 
 ``` json
     {
@@ -92,7 +92,10 @@ With the test above, here are the probabilities that get calculated:
     }
 ```
 
-Without the 'applyInverse' option, this is what you get:
+Output
+------
+
+Standard results look like this:
 
 ``` json
     {
@@ -107,7 +110,7 @@ Without the 'applyInverse' option, this is what you get:
     }
 ```
 
-With the 'applyInverse' option, you get this:
+If you use the 'applyInverse' option, the results are much more emphatic, because training indicates bad items never lack the "a" token.
 
 ``` json
     {
@@ -122,4 +125,3 @@ With the 'applyInverse' option, you get this:
     }
 ```
 
-It's a lot more emphatic, because training indicates bad items never lack the "a" token.
