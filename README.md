@@ -15,6 +15,8 @@ tokens. This is unconventional but produces better results particularly when wor
 smaller vocabularies. Its especially well-suited for classifying items based on a limited
 set of characteristics.
 
+[slides](http://darrenderidder.github.io/talks/MachineLearning)
+
 Usage
 -----
 1. Require the classifier and reference its utilities.
