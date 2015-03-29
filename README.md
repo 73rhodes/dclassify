@@ -17,6 +17,12 @@ set of characteristics.
 
 [slides](http://darrenderidder.github.io/talks/MachineLearning)
 
+Installation
+------------
+`npm install dclassify`
+
+<img src="http://npm.packagequality.com/badge/dclassify.png"/>
+
 Usage
 -----
 1. Require the classifier and reference its utilities.
