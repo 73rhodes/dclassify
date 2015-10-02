@@ -1,6 +1,10 @@
 dclassify
 =========
 
+[![Build Status](https://travis-ci.org/73rhodes/dclassify.svg?branch=master)](https://travis-ci.org/73rhodes/dclassify)
+
+<img src="http://npm.packagequality.com/badge/dclassify.png"/>
+
 dclassify is a Naive Bayesian classifier for NodeJS that goes one step further than your
 usual binary classifier by introducing a unique probablility-of-absence optimisation. In
 testing this optimisation has led to a ~10% improvement in correctness over conventional
@@ -20,8 +24,6 @@ set of characteristics.
 Installation
 ------------
 `npm install dclassify`
-
-<img src="http://npm.packagequality.com/badge/dclassify.png"/>
 
 Usage
 -----
