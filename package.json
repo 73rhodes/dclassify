@@ -1,6 +1,6 @@
 {
   "name": "dclassify",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Optimized Naive Bayesian classifier for NodeJS",
   "main": "index.js",
   "directories": {
