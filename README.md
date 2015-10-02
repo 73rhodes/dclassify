@@ -3,8 +3,6 @@ dclassify
 
 [![Build Status](https://travis-ci.org/73rhodes/dclassify.svg?branch=master)](https://travis-ci.org/73rhodes/dclassify) [![npm version](https://badge.fury.io/js/dclassify.svg)](http://badge.fury.io/js/dclassify)
 
-<!-- img src="http://npm.packagequality.com/badge/dclassify.png"/ -->
-
 dclassify is a Naive Bayesian classifier for NodeJS that goes one step further than your
 usual binary classifier by introducing a unique probablility-of-absence optimisation. In
 testing this optimisation has led to a ~10% improvement in correctness over conventional
