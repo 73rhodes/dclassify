@@ -4,12 +4,11 @@ dclassify
 [![Build Status](https://travis-ci.org/73rhodes/dclassify.svg?branch=master)](https://travis-ci.org/73rhodes/dclassify) [![npm version](https://badge.fury.io/js/dclassify.svg)](http://badge.fury.io/js/dclassify)
 
 dclassify is a Naive Bayesian classifier for NodeJS that goes one step further than your
-usual binary classifier by introducing a unique probablility-of-absence optimization. It
-is also known as "the prevalent negative", and is particularly useful in diagnostics. In
-testing this optimization has led to a ~10% improvement in correctness over conventional
-binary classifiers. It's mainly intended for classifying items based on a limited set of
-characteristics rather than for language processing; for example a prediction based on a
-fixed set of attributes.
+usual binary classifier by introducing a unique probablility-of-absence optimization, aka
+"the prevalent negative". In testing this optimization has led to a ~10% improvement in
+correctness over conventional binary classifiers. It's mainly intended for classifying
+items based on a limited set of characteristics rather than for language processing; ie.
+predicting a result based on a fixed set of attributes.
 
 General-purpose Document and DataSet classes are provided for training and test data sets.
 
