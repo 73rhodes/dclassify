@@ -4,14 +4,16 @@ dclassify
 [![Build Status](https://travis-ci.org/73rhodes/dclassify.svg?branch=master)](https://travis-ci.org/73rhodes/dclassify) [![npm version](https://badge.fury.io/js/dclassify.svg)](http://badge.fury.io/js/dclassify)
 
 dclassify is a Naive Bayesian classifier for NodeJS that goes one step further than your
-usual binary classifier by introducing a unique probablility-of-absence optimisation. In
-testing this optimisation has led to a ~10% improvement in correctness over conventional
-binary classifiers. It is mainly intended for classifying items based on a finite set of
-characteristics, rather than for language processing.
+usual binary classifier by introducing a unique probablility-of-absence optimization. It
+is also known as "the prevalent negative", and is particularly useful in diagnostics. In
+testing this optimization has led to a ~10% improvement in correctness over conventional
+binary classifiers. It's mainly intended for classifying items based on a limited set of
+characteristics rather than for language processing; for example a prediction based on a
+fixed set of attributes.
 
 General-purpose Document and DataSet classes are provided for training and test data sets.
 
-If the applyInverse optimisation is used, dclassify will calculate probabilities based on
+If the applyInverse optimization is used, dclassify will calculate probabilities based on
 the present tokens as usual, but will also calculate a probability-of-absence for missing
 tokens. This is unconventional but produces better results particularly when working with
 smaller vocabularies. Its especially well-suited for classifying items based on a limited
@@ -118,7 +120,8 @@ Standard results look like this:
     }
 ```
 
-If you use the 'applyInverse' option, the results are much more emphatic, because training indicates bad items never lack the "a" token.
+If you use the 'applyInverse' option, the results are much more emphatic, because training
+indicates bad items never lack the "a" token.
 
 ``` json
     {
