@@ -3,16 +3,16 @@ dclassify
 
 [![Build Status](https://travis-ci.org/73rhodes/dclassify.svg?branch=master)](https://travis-ci.org/73rhodes/dclassify) [![npm version](https://badge.fury.io/js/dclassify.svg)](http://badge.fury.io/js/dclassify)
 
-dclassify is a Naive Bayesian classifier for NodeJS that goes one step further than your
+`dclassify` is a Naive Bayesian classifier for NodeJS that goes one step further than your
 usual binary classifier by introducing a unique probablility-of-absence optimization, aka
-"the prevalent negative". In testing this optimization has led to a ~10% improvement in
+"the prevalent negative". In testing, this optimization has led to a ~10% improvement in
 correctness over conventional binary classifiers. It's mainly intended for classifying
 items based on a limited set of characteristics rather than for language processing; ie.
 predicting a result based on a fixed set of attributes.
 
 General-purpose Document and DataSet classes are provided for training and test data sets.
 
-If the applyInverse optimization is used, dclassify will calculate probabilities based on
+If the `applyInverse` optimization is used, dclassify will calculate probabilities based on
 the present tokens as usual, but will also calculate a probability-of-absence for missing
 tokens. This is unconventional but produces better results particularly when working with
 smaller vocabularies. Its especially well-suited for classifying items based on a limited
@@ -135,3 +135,8 @@ indicates bad items never lack the "a" token.
     }
 ```
 
+The Prevalent Negative
+----------------------
+A typical example of a Bayesian classifier is an email filter that categorizes email messages into "spam" or "not spam" by scanning them for certain keywords. Some words have a higher probability than others of being spam-related. If enough words in an email are "spammy", the email get's caught by the spam filter.  In this use-case, we care about the words that are present in the message, especially spammy words.  We don't care about words that don't appear in the message -- there are just too many innocuous words and most of them don't appear in any given email.
+
+In other cases, we care about things that don't appear. If a key ingredient is missing, that might be very important information to know.  For example, most birds can fly. If we create a Bayesian classifier to assess the probability of an animal being a bird, it would be useful to know if the ability to fly is missing. Here, the ability to fly is a "prevalent negative".  If the list of characteristics you're evaluating is fairly small (say, a couple hundred items) and it includes some "key ingredients" that really matter if they're missing, this is where the `applyInverse` option can be useful. This checks for characteristics that are present as well as for characteristics that are missing.
