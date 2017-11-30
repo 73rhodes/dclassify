@@ -22,7 +22,7 @@ set of characteristics.
 
 Intro to Machine Learning with Node.JS
 ---------------------------------------------
-[slides](http://darrenderidder.github.io/talks/MachineLearning)
+View [slides](http://darrenderidder.github.io/talks/MachineLearning) from a talk presented at [OttawaJS](http://ottawajs.org).
 
 The Prevalent Negative
 ----------------------
