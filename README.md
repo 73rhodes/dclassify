@@ -129,7 +129,7 @@ The probabilities get calculated like this.
 Output
 ------
 
-Standard results look like this:
+Standard results (without the `applyInverse: true` option) would look like this:
 
 ``` json
     {
@@ -144,7 +144,7 @@ Standard results look like this:
     }
 ```
 
-If you use the 'applyInverse' option, the results are much more emphatic, because training
+If you use the `applyInverse: true` option, the results are much more emphatic, because training
 indicates bad items never lack the "a" token.
 
 ``` json
