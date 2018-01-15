@@ -7,7 +7,7 @@ dclassify
 usual binary classifier by introducing a unique "probablility of absence" optimization. In
 the medical diagnostics field this has been referred to as "the prevalent negative". In some
 test cases this optimization has led to a ~10% improvement in correctness over conventional
-binary classifiers. It's mainly intended for classifying items based on a limited set of
+binary classifiers. It is mainly intended for classifying items based on a limited set of
 characteristics rather than for language processing; ie. predicting a result based on a
 limited fixed set of attributes.
 
@@ -17,7 +17,7 @@ The probability-of-absence optimization can be enabled using the `applyInverse` 
 this option is set to `true` then dclassify will calculate probabilities based on
 the present tokens as usual, but will also calculate a probability-of-absence for missing
 tokens. This is unconventional but produces better results particularly when working with
-smaller vocabularies. Its especially well-suited for classifying items based on a limited
+smaller vocabularies. It is especially well-suited for classifying items based on a limited
 set of characteristics.
 
 Intro to Machine Learning with Node.JS
