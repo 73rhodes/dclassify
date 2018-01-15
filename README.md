@@ -87,6 +87,21 @@ Usage
     console.log(result1);
 ```
 
+The output of the above will be:
+
+```javascript
+{
+    "category": "good",
+    "probability": 1,
+    "timesMoreLikely": "Infinity",
+    "secondCategory": "bad",
+    "probabilities": [
+        { "category": "good", "probability": 0.09876543209876543 },
+        { "category": "bad", "probability": 0 }
+    ]
+}
+```
+
 Probabilities
 -------------
 
