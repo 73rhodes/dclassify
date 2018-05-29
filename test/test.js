@@ -21,7 +21,7 @@ assert.equal(item1.id, "item1");
 assert.equal(item1.tokens.length, 3);
 assert.equal(data.categorizedItems.bad.length, 3);
 
-console.log('Training data set: ' + JSON.stringify(data, null, 4));
+// console.log('Training data set: ' + JSON.stringify(data, null, 4));
 
 var options = {
     applyInverse: true
@@ -30,23 +30,25 @@ var options = {
 var classifier1 = new Classifier(options);
 
 classifier1.train(data);
-console.log('Classifier trained.');
-console.log(JSON.stringify(classifier1.probabilities, null, 4));
+// console.log('Classifier trained.');
+// console.log(JSON.stringify(classifier1.probabilities, null, 4));
 
 var testDoc = new Document('testDoc', ['b','d', 'e']);
 
 var result1 = classifier1.classify(testDoc);
-console.log(result1);
+// console.log(result1);
 assert.equal(result1.category, "good");
 assert.equal(result1.probability, 1);
 
 var classifier2 = new Classifier();
 classifier2.train(data);
-console.log('Classifier trained.');
-console.log(JSON.stringify(classifier2.probabilities, null, 4));
+// console.log('Classifier trained.');
+// console.log(JSON.stringify(classifier2.probabilities, null, 4));
 assert.equal((classifier2.probabilities.good.c < 1), true);
 
 var result2 = classifier2.classify(testDoc);
-console.log(result2);
+// console.log(result2);
 assert.equal(result2.category, "good");
 assert.equal((result2.probability < 1), true);
+
+console.log('Tests OK.');
