@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/73rhodes/dclassify/issues"
   },
-  "homepage": "https://github.com/73rhodes/dclassify"
+  "homepage": "https://github.com/73rhodes/dclassify",
+  "devDependencies": {
+    "nyc": "^11.8.0"
+  }
 }
