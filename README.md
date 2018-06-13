@@ -14,11 +14,10 @@ limited fixed set of attributes.
 General-purpose Document and DataSet classes are provided for training and test data sets.
 
 The probability-of-absence optimization can be enabled using the `applyInverse` option. If
-this option is set to `true` then dclassify will calculate probabilities based on
-the present tokens as usual, but will also calculate a probability-of-absence for missing
-tokens. This is unconventional but produces better results particularly when working with
-smaller vocabularies. It is especially well-suited for classifying items based on a limited
-set of characteristics.
+this option is set to `true` then dclassify will calculate probabilities based on the present
+tokens as usual, but will also calculate a probability-of-absence for missing tokens. This is
+unconventional but produces better results particularly when working with smaller vocabularies.
+It is especially well-suited for classifying items based on a limited set of characteristics.
 
 Intro to Machine Learning with Node.JS
 ---------------------------------------------
