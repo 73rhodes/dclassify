@@ -4,30 +4,46 @@ dclassify
 [![Build Status](https://travis-ci.org/73rhodes/dclassify.svg?branch=master)](https://travis-ci.org/73rhodes/dclassify) [![npm version](https://badge.fury.io/js/dclassify.svg)](http://badge.fury.io/js/dclassify) [![DeepScan Grade](https://deepscan.io/api/projects/907/branches/1862/badge/grade.svg)](https://deepscan.io/dashboard/#view=project&pid=907&bid=1862)
 
 `dclassify` is a Naive Bayesian classifier for NodeJS that goes one step further than your
-usual binary classifier by introducing a unique "probablility of absence" optimization. In
-the medical diagnostics field this has been referred to as "the prevalent negative". In some
-test cases this optimization has led to a ~10% improvement in correctness over conventional
-binary classifiers. It is mainly intended for classifying items based on a limited set of
-characteristics rather than for language processing; ie. predicting a result based on a
-limited fixed set of attributes.
+usual binary classifier by introducing a unique "probablility of absence" optimization, also
+known as "the prevalent negative". In some test cases this optimization has led to a ~10%
+improvement in correctness over conventional binary classifiers. It is mainly intended for
+classifying items based on a limited set of characteristics rather than for language
+processing; ie. predicting a result based on a limited fixed set of attributes.
 
 General-purpose Document and DataSet classes are provided for training and test data sets.
 
 The probability-of-absence optimization can be enabled using the `applyInverse` option. If
-this option is set to `true` then dclassify will calculate probabilities based on the present
+this option is set to `true`, dclassify will calculate probabilities based on the present
 tokens as usual, but will also calculate a probability-of-absence for missing tokens. This is
 unconventional but produces better results particularly when working with smaller vocabularies.
 It is especially well-suited for classifying items based on a limited set of characteristics.
 
 Intro to Machine Learning with Node.JS
 ---------------------------------------------
-View [slides](http://darrenderidder.github.io/talks/MachineLearning) from a talk presented at [OttawaJS](http://ottawajs.org).
+View [slides](http://darrenderidder.github.io/talks/MachineLearning) from a talk presented at
+[OttawaJS](http://ottawajs.org).
 
 The Prevalent Negative
 ----------------------
-A typical example of a Bayesian classifier is an email filter that categorizes email messages into "spam" or "not spam" by scanning them for certain keywords. Some words have a higher probability than others of being spam-related. If enough words in an email are spam-related, the email will be caught by the spam filter.  In this use-case, we care about the words that are present in the message, especially spam-related words.  We don't care about words that don't appear in the message -- there are just too many innocuous words and most of them don't appear in one email message.
+A typical example of a Bayesian classifier is an email filter that categorizes
+email messages into "spam" or "not spam" by scanning them for certain keywords.
+Some words have a higher probability than others of being spam-related. If enough
+words in an email are spam-related, the email will be caught by the spam filter.
+In this use-case, we care about the words that are present in the message,
+especially spam-related words.  We don't care about words that don't appear in
+the message -- there are just too many innocuous words and most of them don't
+appear in one email message.
 
-In other cases, we care about things that don't appear. If a key ingredient is missing, that might be very important information to know.  For example, most birds can fly. If we create a Bayesian classifier to assess the probability of an animal being a bird, it would be useful to know if the ability to fly is missing. Here, the ability to fly is a "prevalent negative".  If the list of characteristics you're evaluating is fairly small (say, a couple hundred items) and it includes some "key ingredients" that really matter if they're missing, this is where the `applyInverse` option can be useful. This checks for characteristics that are present as well as for characteristics that are missing.
+In other cases, we care about things that don't appear. If a key ingredient is.
+missing, that might be very important information to know.  For example, most
+birds can fly. If we create a Bayesian classifier to assess the probability of
+an animal being a bird, it would be useful to know if the ability to fly is
+missing. Here, the ability to fly is a "prevalent negative"; if it is missing,
+we can be fairly sure the animal is not a bird. In general, if the list of
+characteristics you're evaluating is fairly small (say, a couple hundred items)
+and it includes some "key ingredients" that should almost always be present,
+this is where the `applyInverse` option can be useful. It checks for
+characteristics that are present as well as for ones that are missing.
 
 Installation
 ------------
