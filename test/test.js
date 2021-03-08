@@ -19,7 +19,7 @@ data.add('good', [itemA, itemB, itemC]);
 
 assert.equal(item1.id, "item1");
 assert.equal(item1.tokens.length, 3);
-assert.equal(data.categorizedItems.bad.length, 3);
+assert.equal(data.categories.bad.length, 3);
 
 // console.log('Training data set: ' + JSON.stringify(data, null, 4));
 
