@@ -3,7 +3,7 @@ env:
     - CC_TEST_REPORTER_ID=25b6bf1f9b4027de4583732016316df1990d79e10e56cc8fdf44368fabf4f122
 language: node_js
 node_js:
-  - 8.2.1
+  - 12.21.0
 dist: trusty
 before_script:
   - yarn global add nyc
