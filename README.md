@@ -27,25 +27,22 @@ View [slides](http://darrenderidder.github.io/talks/MachineLearning) from a talk
 
 The Prevalent Negative
 ----------------------
-A typical example of a Bayesian classifier is an email filter that categorizes
-email messages into "spam" or "not spam" by scanning them for certain keywords.
-Some words have a higher probability than others of being spam-related. If enough
-words in an email are spam-related, the email will be caught by the spam filter.
-In this use-case, we care about the words that are present in the message,
-especially spam-related words.  We don't care about words that don't appear in
-the message -- there are just too many innocuous words and most of them don't
-appear in one email message.
+The typical example of a Bayesian classifier is an email filter that categorizes
+emails by looking for words that are considered spam-related. In this case we
+care about the words (aka. "tokens") that are present. We don't care about words
+that are missing.
 
-In other cases, we care about things that don't appear. If a key ingredient is.
-missing, that might be very important information to know.  For example, most
-birds can fly. If we create a Bayesian classifier to assess the probability of
-an animal being a bird, it would be useful to know if the ability to fly is
-missing. Here, the ability to fly is a "prevalent negative"; if it is missing,
-we can be fairly sure the animal is not a bird. In general, if the list of
-characteristics you're evaluating is fairly small (say, a couple hundred items)
-and it includes some "key ingredients" that should almost always be present,
-this is where the `applyInverse` option can be useful. It checks for
-characteristics that are present as well as for ones that are missing.
+But in other cases, we care about things that are missing. If a key ingredient
+is missing, that could be very important.  For example, birds can fly. If we
+created a Bayesian classifier to tell if an animal is a bird, we'd want to know
+if the animal can fly. Here, the ability to fly is a "prevalent negative"; if
+it's missing, we can be pretty sure the animal is not a bird.
+
+Making use of "prevalent negatives" can be useful if the total set of tokens
+is fairly small (say, a few hundred items) and it includes some "key ingredients"
+(like with birds, the ability to fly). In these cases, using `applyInverse` option
+to look for prevalent negatives can be useful. It checks for tokens that are present
+as well as for ones that are missing.
 
 Installation
 ------------
