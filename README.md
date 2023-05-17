@@ -5,44 +5,39 @@ dclassify
 [![npm version](https://badge.fury.io/js/dclassify.svg)](http://badge.fury.io/js/dclassify)
 [![DeepScan grade](https://deepscan.io/api/projects/2827/branches/20464/badge/grade.svg)](https://deepscan.io/dashboard#view=project&pid=2827&bid=20464)
 
-`dclassify` is a Naive Bayesian classifier for NodeJS that goes one step further than your
-usual binary classifier by introducing a unique "probablility of absence" optimization, also
-known as "the prevalent negative". In some test cases this optimization has led to a ~10%
-improvement in correctness over conventional binary classifiers. It is mainly intended for
-classifying items based on a limited set of characteristics rather than for language
-processing; ie. predicting a result based on a limited fixed set of attributes.
+`dclassify` is an optimized Naive Bayesian classifier for NodeJS that goes one step further
+than your usual binary classifier by introducing a unique "probablility of absence" option.
+In some test cases this has led to a ~10% improvement over conventional binary classifiers.
+It ideal for classifying items based on a limited set of characteristics (aka "tokens")
+rather than for language processing.
 
 General-purpose Document and DataSet classes are provided for training and test data sets.
 
-The probability-of-absence optimization can be enabled using the `applyInverse` option. If
-this option is set to `true`, dclassify will calculate probabilities based on the present
-tokens as usual, but will also calculate a probability-of-absence for missing tokens. This is
-unconventional but produces better results particularly when working with smaller vocabularies.
-It is especially well-suited for classifying items based on a limited set of characteristics.
-
 Intro to Machine Learning with Node.JS
----------------------------------------------
-View [slides](http://darrenderidder.github.io/talks/MachineLearning) from a talk presented at
-[OttawaJS](http://ottawajs.org).
+--------------------------------------
+View [slides](http://darrenderidder.github.io/talks/MachineLearning) from a talk presented
+at [OttawaJS](http://ottawajs.org).
 
-The Prevalent Negative
-----------------------
-The typical example of a Bayesian classifier is an email filter that categorizes
-emails by looking for words that are considered spam-related. In this case we
-care about the words (aka. "tokens") that are present. We don't care about words
-that are missing.
+Optimization
+------------
+The probability-of-absence optimization can be enabled with the `applyInverse` option. When
+this option is set to `true`, dclassify will calculate probabilities based on the present
+tokens as well as a probability of absence for tokens that are not present. This is
+unconventional but can produce better results when working with smaller vocabularies when
+classifying items based on a limited set of characteristics, especially when some of those
+characteristics are nearly always present in one of the categories.
 
-But in other cases, we care about things that are missing. If a key ingredient
-is missing, that could be very important.  For example, birds can fly. If we
-created a Bayesian classifier to tell if an animal is a bird, we'd want to know
-if the animal can fly. Here, the ability to fly is a "prevalent negative"; if
-it's missing, we can be pretty sure the animal is not a bird.
+Most bayesian classifiers work by looking for specific tokens to be present. For example, an
+email spam filter might categorize emails by looking for words that are considered spam-related.
+It cares about the words that are present, but not about words that are absent, because there
+are just too many of them.
 
-Making use of "prevalent negatives" can be useful if the total set of tokens
-is fairly small (say, a few hundred items) and it includes some "key ingredients"
-(like with birds, the ability to fly). In these cases, using `applyInverse` option
-to look for prevalent negatives can be useful. It checks for tokens that are present
-as well as for ones that are missing.
+In other cases we care if important key ingredients are missing. For example, an animal
+without wings is most likely not a bird. And a mobile app without internet connectivity is
+most likely not malware. Such "prevalent negatives" can be quite effective if the total set of
+tokens is fairly small (say, a few hundred items) and includes such key ingredients. Using the
+`applyInverse` option to look for prevalent negatives can significantly improve the results in
+such cases.
 
 Installation
 ------------
