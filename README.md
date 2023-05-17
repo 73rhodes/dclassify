@@ -6,7 +6,7 @@ dclassify
 [![DeepScan grade](https://deepscan.io/api/projects/2827/branches/20464/badge/grade.svg)](https://deepscan.io/dashboard#view=project&pid=2827&bid=20464)
 
 `dclassify` is an optimized Naive Bayesian classifier for NodeJS that goes one step further
-than your usual binary classifier by introducing a unique "probablility of absence" option.
+than your usual binary classifier by introducing a unique "probablility of absence" feature.
 In some test cases this has led to a ~10% improvement over conventional binary classifiers.
 It designed for classifying items based on a limited set of characteristics (aka "tokens")
 rather than for general language processing.
@@ -18,14 +18,14 @@ at [OttawaJS](http://ottawajs.org).
 
 Optimization
 ------------
-The probability-of-absence optimization can be enabled with the `applyInverse` option. When
+The "probability of absence" optimization can be enabled with the `applyInverse` option. When
 this option is set to `true`, dclassify will calculate probabilities based on the present
 tokens as well as a probability of absence for tokens that are not present. This is
-unconventional but can produce better results when working with smaller vocabularies when
-classifying items based on a limited set of characteristics, especially when some of those
-characteristics are nearly always present in one of the categories.
+unconventional but can produce better results when classifying items based on a limited set
+of characteristics, especially when some of those characteristics are nearly always present
+in one of the categories.
 
-Most bayesian classifiers work by looking for specific tokens to be present. For example, an
+Most binary classifiers work by looking for specific tokens to be present. For example, an
 email spam filter might categorize emails by looking for words that are considered spam-related.
 It cares about the words that are present, but not about words that are absent, because there
 are just too many of them.
