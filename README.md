@@ -13,7 +13,7 @@ rather than for general language processing.
 
 Intro to Machine Learning with Node.JS
 --------------------------------------
-View [slides](http://darrenderidder.github.io/talks/MachineLearning) from a talk presented
+View [slides](http://73rhodes.github.io/talks/MachineLearning/) from a talk presented
 at [OttawaJS](http://ottawajs.org).
 
 Optimization
