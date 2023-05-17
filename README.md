@@ -1,7 +1,7 @@
 dclassify
 =========
 
-[![Build Status](https://travis-ci.org/73rhodes/dclassify.svg?branch=master)](https://travis-ci.org/73rhodes/dclassify)
+[![73rhodes](https://circleci.com/gh/73rhodes/dclassify.svg?style=shield)](https://app.circleci.com/pipelines/github/73rhodes/dclassify)
 [![npm version](https://badge.fury.io/js/dclassify.svg)](http://badge.fury.io/js/dclassify)
 [![DeepScan grade](https://deepscan.io/api/projects/2827/branches/20464/badge/grade.svg)](https://deepscan.io/dashboard#view=project&pid=2827&bid=20464)
 
