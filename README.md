@@ -20,7 +20,7 @@ Optimization
 ------------
 The "probability of absence" optimization can be enabled with the `applyInverse` option. When
 this option is set to `true`, dclassify will calculate probabilities based on the present
-tokens as well as a probability of absence for tokens that are not present. This is
+tokens as well as the inverse - a probability of absence for tokens that are not present. This is
 unconventional but can produce better results when classifying items based on a limited set
 of characteristics, especially when some of those characteristics are nearly always present
 in one of the categories.
