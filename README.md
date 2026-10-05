@@ -5,37 +5,27 @@ dclassify
 [![npm version](https://badge.fury.io/js/dclassify.svg)](http://badge.fury.io/js/dclassify)
 [![DeepScan grade](https://deepscan.io/api/projects/2827/branches/20464/badge/grade.svg)](https://deepscan.io/dashboard#view=project&pid=2827&bid=20464)
 
-`dclassify` is an optimized Naive Bayesian classifier for NodeJS that goes one step further
-than your ordinary binary classifier by introducing a unique "probablility of absence" feature.
-In some test cases this has led to a ~10% improvement over conventional binary classifiers.
-It designed for classifying items based on a limited set of characteristics (aka "tokens")
-rather than for general language processing.
+`dclassify` is a Naive Bayesian classifier for NodeJS that is optimized for certain use cases using
+a unique "probability of absence" feature, resulting in a ~10% improvement over conventional binary
+classifiers for some use cases. It is designed for classifying items based on a limited set of
+characteristics (tokens) rather than for general language processing.
 
-Intro to Machine Learning with Node.JS
---------------------------------------
-View [slides](http://73rhodes.github.io/talks/MachineLearning/) from a talk presented
-at [OttawaJS](http://ottawajs.org).
-
-Optimization
-------------
-The "probability of absence" optimization can be enabled with the `applyInverse` option. When
-this option is set to `true`, dclassify will calculate probabilities based on the present
-tokens as well as the inverse - a probability of absence for tokens that are not present. This is
-unconventional but can produce better results when classifying items based on a limited set
-of characteristics, especially when some of those characteristics are nearly always present
-in one of the categories.
-
-Most binary classifiers work by looking for specific tokens to be present. For example, an
-email spam filter might categorize emails by looking for words that are considered spam-related.
-It cares about the words that are present, but not about words that are absent, because there
-are just too many of them.
+Optimized Classification
+------------------------
+Most binary classifiers work by looking for the presence of certain tokens. For example, an
+email spam filter might categorize emails by looking for words that are spam-related. It cares
+about the words that are present, but not about words that are missing.
 
 In other cases we care if important key ingredients are missing. For example, an animal
-without wings is most likely not a bird. And a mobile app without internet connectivity is
-most likely not malware. Such "prevalent negatives" can be quite effective if the total set of
-tokens is fairly small (say, a few hundred items) and includes such key ingredients. Using the
-`applyInverse` option to look for prevalent negatives can significantly improve the results in
-such cases.
+without wings is probably not a bird. And a mobile app without internet connectivity is
+probably not malware. These qualities (sometimes referred to as "prevalent negatives")
+are very effective if the total set of tokens is limited, and the classification has
+certain "key ingredients" (ie. birds should have wings). Checking for prevalent negatives
+can significantly improve the classifier results in such cases.
+
+This optimization can be enabled in `dclassify` with the `applyInverse` option; this will
+calculate probabilities based on the present tokens as well as the inverse - a probability of
+absence for tokens that are NOT present.
 
 Installation
 ------------
@@ -166,3 +156,8 @@ indicates bad items never lack the "a" token.
         ]
     }
 ```
+
+Intro to Machine Learning with Node.JS
+--------------------------------------
+View [slides](http://73rhodes.github.io/talks/MachineLearning/) from a talk presented
+at [OttawaJS](http://ottawajs.org).
