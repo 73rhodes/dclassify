@@ -7,8 +7,8 @@ dclassify
 
 `dclassify` is a Naive Bayesian classifier for NodeJS that is optimized for certain use cases using
 a unique "probability of absence" feature, resulting in a ~10% improvement over conventional binary
-classifiers for some use cases. It is designed for classifying items based on a limited set of
-characteristics (tokens) rather than for general language processing.
+classifiers. It is designed for classifying items based on a limited set of characteristics (tokens)
+rather than for general language processing.
 
 Optimized Classification
 ------------------------
